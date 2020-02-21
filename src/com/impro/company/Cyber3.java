@@ -1,4 +1,4 @@
-package com.impro.random;
+package com.impro.company;
 
 
 import java.io.*;
@@ -15,7 +15,7 @@ import static java.util.stream.Collectors.toList;
 
 
 /* Max Stock Prices */
-public class Solution3 {
+public class Cyber3 {
 
     public static long maximumProfit(List<Integer> price) {
         long profit = 0L;

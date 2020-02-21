@@ -1,4 +1,4 @@
-package com.impro.random;
+package com.impro.company;
 
 
 import java.io.*;
@@ -15,7 +15,7 @@ import static java.util.stream.Collectors.toList;
 
 
 /* count palindrome substrings */
-public class Solution2 {
+public class Cyber2 {
 
     // Complete the oddNumbers function below.
     private static int countPalindromes(String s) {

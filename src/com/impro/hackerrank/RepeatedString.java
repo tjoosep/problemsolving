@@ -1,4 +1,4 @@
-package com.impro;
+package com.impro.hackerrank;
 
 
 

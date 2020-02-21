@@ -1,4 +1,4 @@
-package com.impro.sorting;
+package com.impro.hackerrank.sorting;
 
 
 

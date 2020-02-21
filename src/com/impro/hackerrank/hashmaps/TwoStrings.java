@@ -1,4 +1,4 @@
-package com.impro.hashmaps;
+package com.impro.hackerrank.hashmaps;
 
 
 public class TwoStrings {

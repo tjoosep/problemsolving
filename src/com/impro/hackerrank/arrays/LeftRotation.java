@@ -1,4 +1,4 @@
-package com.impro.arrays;
+package com.impro.hackerrank.arrays;
 
 
 import java.util.Arrays;

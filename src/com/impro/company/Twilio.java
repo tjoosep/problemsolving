@@ -1,4 +1,4 @@
-package com.impro;
+package com.impro.company;
 
 import java.io.*;
 import java.math.*;
@@ -26,7 +26,8 @@ public class Twilio {
 
         List<String> res = match(prefixes, numbers);
 
-        for (String el : res){
+        findLongestPrefix(numbers, prefixes);
+        for (String el : res) {
             System.out.println(el);
         }
     }
@@ -77,11 +78,10 @@ public class Twilio {
                         if (prefixLen > currentLen) {
                             numsAndPrefixes.put(number, prefix);
                         }
-                    }
-                    else {
+                    } else {
                         numsAndPrefixes.put(number, prefix);
                     }
-                } else if (!number.contains(prefix) && !numsAndPrefixes.containsKey(number)){
+                } else if (!number.contains(prefix) && !numsAndPrefixes.containsKey(number)) {
                     numsAndPrefixes.put(number, "");
                 }
             }
@@ -90,51 +90,27 @@ public class Twilio {
         return new ArrayList<String>(numsAndPrefixes.values());
     }
 
-    /*
-    public static List<String> match(List<String> prefixes, List<String> numbers) {
-        List<String> result = new ArrayList<>();
+    /* even better solution
+    Your code is a full Cartesian join of numbers and prefixes, so O(n*m).
+    This solution is O(n*log m). On average, it probably only has to look up in the prefixSet about 3 times per phone number,
+    not scan the full prefix array.
+    Sure, there is a one-time O(m*log m) startup cost to build the Set, so if you only have a few numbers or prefixes,
+    it may not be worth it, but if the prefix list is huge, which it will be if you're doing all the international prefixes,
+     and you have a lot of phone numbers to check, then the performance gain is immense.
+     */
+    public static void findLongestPrefix(List<String> numbers, List<String> prefixes) {
+        TreeSet<String> prefixSet = new TreeSet<>(prefixes);
 
-        // some easy cases
-        if (prefixes.isEmpty() || numbers.isEmpty()){
-            return result;
-        }
-
-        commonPrefix(numbers, prefixes);
-
-        return result;
-    }
-
-    static List<String> commonPrefix(List<String> numbers, List<String> prefixes) {
-        List<String> result = new ArrayList<>();
-        String prefix = "";
-
-        for (int i = 0; i < numbers.size(); i++) {
-            for (int j = 1; j <= prefixes.size() - 1; j++) {
-                prefix = commonPrefixUtil(numbers.get(i), prefixes.get(j));
-                if (prefix.length() > 1){
-                    result.add(prefix);
+        for (String number :numbers){
+            String prefix = prefixSet.floor(number);
+            while (prefix != null && !number.startsWith(prefix)) {
+                prefix = prefixSet.floor(prefix.substring(0, prefix.length() - 1));
+                if (prefix == null) {
+                    prefix = "";
                 }
             }
+                System.out.println(number + " -> " + prefix);
         }
-
-        return result;
     }
-
-    static String commonPrefixUtil(String str1, String str2) {
-        String result = "";
-        int n1 = str1.length();
-        int n2 = str2.length();
-
-        // Compare str1 and str2
-        for (int i = 0, j = 0; i <= n1 - 1 && j <= n2 - 1; i++, j++) {
-            if (str1.charAt(i) != str2.charAt(j)) {
-                break;
-            }
-            result += str1.charAt(i);
-        }
-
-        return (result);
-    }
-     */
 
 }

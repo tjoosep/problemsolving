@@ -1,4 +1,4 @@
-package com.impro.search;
+package com.impro.hackerrank.search;
 
 import java.util.*;
 

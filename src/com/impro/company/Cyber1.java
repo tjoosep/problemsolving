@@ -1,4 +1,4 @@
-package com.impro.random;
+package com.impro.company;
 
 
 
@@ -17,7 +17,7 @@ import static java.util.stream.Collectors.toList;
 
 
 
-public class Solution {
+public class Cyber1 {
 
     // Complete the findNumber function below.
     static String findNumber(List<Integer> arr, int k) {
