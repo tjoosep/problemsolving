@@ -1,29 +1,8 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Just repo to hold my problem solving tasks in one place. 
 
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* Quick and easy to find answer to some of the problems
+* Keep track of my progress or implementations
