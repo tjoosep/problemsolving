@@ -12,7 +12,7 @@ public class CalcSequence {
 
         for (int i = 0; i < n; i++) {
             String[] numbers = in.nextLine().split(" ");
-            int[] arr = new int[numbers.length];;
+            int[] arr = new int[numbers.length];
             for (int j = 0; j < numbers.length; j++) {
                 arr[j] = Integer.parseInt(numbers[j]);
             }
