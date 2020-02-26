@@ -4,40 +4,44 @@ package com.impro.codeabbey.beginner;
 import java.util.*;
 
 public class BubbleSort {
+
     public static void main(String[] args) {
-        /*
+
         Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        in.nextLine();
+
         String[] input = in.nextLine().split(" ");
-        long[] arr = new long[input.length-1];
-        for (int i = 0; i < input.length-1; i++) {
+        int[] arr = new int[input.length];
+
+        for (int i = 0; i < input.length; i++) {
             arr[i] = Integer.parseInt(input[i]);
         }
 
-         */
-        //15, 18, 13, 12, 2, 9, 6, 7, 5, 8, 4, 3, 14, 1, 11, 10, 17, 16
-        //14 83
-        int[] a = new int[] {15, 18, 13, 12, 2, 9, 6, 7, 5, 8, 4, 3, 14, 1, 11, 10, 17, 16};
-        bubbleSort(a);
+        bubbleSort(arr);
 
     }
     
-    static void bubbleSort(int[] arr) {
+    static void bubbleSort(int[] numbers) {
         int swaps = 0;
-        int passes = 0;
+        int pass = 0;
+        boolean sorted = false;
 
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length; j++) {
-                if (arr[i] <= arr[j]) {
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
+        while (!sorted) {
+            sorted = true;
+            for (int i = 0; i < numbers.length-1; i++) {
+                if (numbers[i] > numbers[i+1]) {
+                    sorted = false;
                     swaps++;
+
+                    int temp = numbers[i];
+                    numbers[i] = numbers[i+1];
+                    numbers[i+1] = temp;
                 }
             }
-            passes++;
+            pass++;
         }
-        System.out.println(Arrays.toString(arr));
-        System.out.print(swaps + " " + passes + " ");
+        System.out.print(pass + " " + swaps + " ");
     }
 
 }
