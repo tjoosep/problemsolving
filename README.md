@@ -8,5 +8,7 @@ Just repo to hold my problem solving tasks in one place.
 * Keep track of my progress or implementations
 * Have fun!
 
-###### CodeAbby.com
-###### Hackerrank.com
+### Places I use to solve tasks:
+* CodeAbby.com
+* Hackerrank.com
+* Leetcode.com
