@@ -206,7 +206,7 @@ public class DoublyLinkedList<T> implements Iterable <T> {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("[ ");
+        builder.append("[");
 
         Node<T> pointer = head;
         while (pointer != null) {
@@ -227,11 +227,11 @@ public class DoublyLinkedList<T> implements Iterable <T> {
         DoublyLinkedList<Integer> dll = new DoublyLinkedList<>();
         dll.addFirst(5);
         dll.addLast(6);
-        System.out.println(dll);
-        assert  dll.size() == 2;
+        System.out.println(dll);        // [5 -> 6]
+        System.out.println(dll.size()); // 2
 
         dll.removeFirst();
-        assert dll.peek() == 6;
+        System.out.println(dll.peek()); // 6
     }
 
 }
